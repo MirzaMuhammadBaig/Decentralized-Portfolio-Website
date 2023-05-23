@@ -32,26 +32,19 @@ const Projects = ({ state }) => {
     return (
         <section className="project-section">
             <h1 className="title">Projects </h1>
-            <div className="card">
-                <div className='row'>
-                    {projects !== "" && projects.map((project) => {
-                        const githubLink = `https://github.com/MirzaMuhammadBaig/${project.githubLink}`
-                        return (<>
-                            <div className='col-4 mb-3'>
-                                <a href={githubLink} className="project-card" target='_blank' rel="noopener noreferrer" >
-                                    <div className="card-img card-img-top">
-                                        <img src={`https://gateway.pinata.cloud/ipfs/${project.image}`} className='card-img-top' alt="" /></div>
-                                    <div className="card-text">
-                                        <h3>{project.name}</h3>
-                                        <p>{project.description}</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </>
-                        )
-                    })}
-
-                </div>
+            <div className="card-wrapper">
+                 {projects!=="" && projects.map((project)=>{
+                    const githubLink=`https://github.com/kshitijofficial/${project.githubLink}`
+                    return ( <a href= {githubLink} className="project-card" target='_blank' rel="noopener noreferrer" >
+                    <div className="card-img">
+                        <img src={`https://gateway.pinata.cloud/ipfs/${project.image}`} alt="" /></div>
+                    <div className="card-text">
+                        <h3>{project.name}</h3>
+                        <p>{project.description}</p>
+                    </div>
+                </a>)
+                })} 
+           
             </div>
             {/*  =========popup bootstrap==========  */}
 
