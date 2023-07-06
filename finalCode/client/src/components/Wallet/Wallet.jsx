@@ -19,21 +19,21 @@ const Wallet = ({ saveState }) => {
 
       // Assuming the user clicks on a button to switch networks
       ethereum.request({
-        method: 'wallet_addEthereumChain',
-        params: [
-          {
-            chainId: '0x13881', // Network ID for Polygon Mumbai
-            chainName: 'Polygon Mumbai Testnet',
-            nativeCurrency: {
-              name: 'MATIC',
-              symbol: 'MATIC',
-              decimals: 18,
-            },
-            rpcUrls: ['https://rpc-mumbai.maticvigil.com'], // RPC endpoint for Polygon Mumbai
-            blockExplorerUrls: ['https://explorer-mumbai.maticvigil.com'], // Block explorer URL
-          },
-        ],
-      });
+  method: 'wallet_addEthereumChain',
+  params: [
+    {
+      chainId: '0x61', // Network ID for BSC Testnet
+      chainName: 'Binance Smart Chain Testnet',
+      nativeCurrency: {
+        name: 'BNB',
+        symbol: 'BNB',
+        decimals: 18,
+      },
+      rpcUrls: ['https://data-seed-prebsc-1-s1.binance.org:8545'], // RPC endpoint for BSC Testnet
+      blockExplorerUrls: ['https://testnet.bscscan.com'], // Block explorer URL
+    },
+  ],
+});
 
       const contract = new web3.eth.Contract(
         ABI,
